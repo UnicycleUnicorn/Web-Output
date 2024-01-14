@@ -9,6 +9,7 @@ public class Program
         // Add services to the container.
 
         _ = builder.Services.AddControllers();
+        //_ = builder.Services.AddAuthentication().AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
         WebApplication app = builder.Build();
 
@@ -16,7 +17,8 @@ public class Program
 
         _ = app.UseHttpsRedirection();
 
-        _ = app.UseAuthorization();
+        //_ = app.UseAuthentication();
+        // _ = app.UseAuthorization();
 
         _ = app.MapControllers();
 
